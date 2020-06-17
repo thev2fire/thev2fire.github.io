@@ -359,22 +359,28 @@ function getPoolReferrer() {
 
                 if (level == 1) {
                     if (levelpool == 1){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.03");
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.01");
 		    }
                     if (levelpool == 2){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.06");
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.02");
 		    }
                     if (levelpool == 3){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.15");
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.03");
 		    }
                     if (levelpool == 4){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.3");
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.05");
 		    }
                     if (levelpool == 5){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.6");
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.1");
 		    }
                     if (levelpool == 6){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("1.5");
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.2");
+		    }
+		    if (levelpool == 7){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.3");
+		    }
+	            if (levelpool == 8){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.5");
 		    }
 
 					
@@ -382,43 +388,27 @@ function getPoolReferrer() {
                 }
                  if (level == 2) {
 			if (levelpool == 1){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.01");
-		    }
-                    if (levelpool == 2){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.02");
-		    }
-                    if (levelpool == 3){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.05");
-		    }
-                    if (levelpool == 4){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.1");
-		    }
-                    if (levelpool == 5){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.2");
-		    }
-                    if (levelpool == 6){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.5");
-		    }
-
-                    
-                }
-                 if (level == 3) {
-			if (levelpool == 1){
 			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.005");
 		    }
                     if (levelpool == 2){
 			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.01");
 		    }
                     if (levelpool == 3){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.025");
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.015");
 		    }
                     if (levelpool == 4){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.05");
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.025");
 		    }
                     if (levelpool == 5){
-			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.1");
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.05");
 		    }
                     if (levelpool == 6){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.1");
+		    }
+	            if (levelpool == 7){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.15");
+		    }
+	            if (levelpool == 8){
 			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.25");
 		    }
 
@@ -444,14 +434,14 @@ function getPoolReferrer() {
 
 
 function getPoolPaymentReceived() {
-    var pool1_price = 0.05;
-    var pool2_price = 0.1;
-    var pool3_price = 0.25;
-    var pool4_price = 0.5;
-    var pool5_price = 1;
-    var pool6_price = 2.5;
-    var pool7_price = 10;
-    var pool8_price = 20;
+    var pool1_price = 0.075;
+    var pool2_price = 0.15;
+    var pool3_price = 0.225;
+    var pool4_price = 0.375;
+    var pool5_price = 0.75;
+    var pool6_price = 1.5;
+    var pool7_price = 2.25;
+    var pool8_price = 3.75;
     var pool9_price = 50;
     var pool10_price = 100;
 
@@ -642,14 +632,14 @@ function Transaction_Register() {
 
 function Transaction_Pool() {
     var events = myContractInstance.getPastEvents('getPoolPayment', {filter:{ _receiver: account },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
-        var pool1_price = 0.1;
+         var pool1_price = 0.1;
         var pool2_price = 0.2;
-        var pool3_price = 0.5;
-        var pool4_price = 1;
-        var pool5_price = 2;
-        var pool6_price = 5;
-        var pool7_price = 10;
-        var pool8_price = 20;
+        var pool3_price = 0.3;
+        var pool4_price = 0.5;
+        var pool5_price = 1;
+        var pool6_price = 2;
+        var pool7_price = 3;
+        var pool8_price = 5;
         var pool9_price = 50;
         var pool10_price = 100;
 
@@ -1072,7 +1062,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool3().send({ from: account, value: 500000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool3().send({ from: account, value: 300000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool3pay').hide();
@@ -1090,7 +1080,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
             
-            myContractInstance1.methods.buyPool4().send({ from: account, value: 1000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool4().send({ from: account, value: 500000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool4pay').hide();
@@ -1108,7 +1098,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();           
 
-            myContractInstance1.methods.buyPool5().send({ from: account, value: 2000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool5().send({ from: account, value: 1000000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool5pay').hide();
@@ -1127,7 +1117,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool6().send({ from: account, value: 5000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool6().send({ from: account, value: 2000000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool6pay').hide();
@@ -1146,7 +1136,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool7().send({ from: account, value: 10000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool7().send({ from: account, value: 3000000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool7pay').hide();
@@ -1167,7 +1157,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool8().send({ from: account, value: 20000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool8().send({ from: account, value: 5000000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool8pay').hide();
@@ -1426,6 +1416,38 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                             </li>
+			    <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/7.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 7 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool7count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+			    <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/8.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 8 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool8count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>	
                             
                             
 
@@ -1525,7 +1547,7 @@ $(document).ready(function () {
         </div>
         <!-- row closed -->
         
-        <!-- row opened -->
+       <!-- row opened -->
         <div class="row ">
             <div class="col-md-3 col-xs-6">
                 <div class="card text-center overflow-hidden"style="background-color:#FFEEA8;" >
@@ -1538,7 +1560,7 @@ $(document).ready(function () {
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">0.1 ETH</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays <br /> <strong>0.05</strong> ETH each</p>
+                        <p class="mb-5">Globally <strong>3</strong> people pays <br /> <strong>0.075</strong> ETH each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <button type="button" class="btn btn-primary pool1pay">Enter</button>
                         <p class="pool1transaction btn btn-primary disabled">Not Eligible</p>
@@ -1556,7 +1578,7 @@ $(document).ready(function () {
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">0.2 ETH</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.1</strong> ETH each</p>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.15</strong> ETH each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <button type="button" class="btn btn-danger pool2pay">Enter</button>
                         <p class="pool2transaction btn btn-primary disabled">Not Eligible</p>
@@ -1573,8 +1595,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 3</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">0.5 ETH</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.25</strong> ETH each</p>
+                        <h1 class="pricing-card-title mb-5">0.3 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.225</strong> ETH each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <button type="button" class="btn btn-success pool3pay">Enter</button>
                         <p class="pool3transaction btn btn-primary disabled">Not Eligible</p>
@@ -1592,8 +1614,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 4</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">1 ETH</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.5</strong> ETH each</p>
+                        <h1 class="pricing-card-title mb-5">0.5 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.375</strong> ETH each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <button type="button" class="btn btn-success pool4pay">Enter</button>
                         <p class="pool4transaction btn btn-primary disabled">Not Eligible</p>
@@ -1611,8 +1633,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 5</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">2 ETH</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>1</strong> ETH each</p>
+                        <h1 class="pricing-card-title mb-5">1 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.75</strong> ETH each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <button type="button" class="btn btn-success pool5pay">Enter</button>
                         <p class="pool5transaction btn btn-primary disabled">Not Eligible</p>
@@ -1630,8 +1652,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 6</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">5 ETH</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>2.5</strong> ETH each</p>
+                        <h1 class="pricing-card-title mb-5">2 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>1.5</strong> ETH each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <button type="button" class="btn btn-success pool6pay">Enter</button>
                         <p class="pool6transaction btn btn-primary disabled">Not Eligible</p>
@@ -1639,6 +1661,43 @@ $(document).ready(function () {
                 </div>
             </div>
 
+	    <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden" style="background-color:#FFEEA8;">
+                    <div class="pool7status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 7</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">3 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>2.25</strong> ETH each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <button type="button" class="btn btn-success pool7pay">Enter</button>
+                        <p class="pool7transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+	    <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden" style="background-color:#FFEEA8;">
+                    <div class="pool8status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 8</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">5 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>3.75</strong> ETH each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <button type="button" class="btn btn-success pool8pay">Enter</button>
+                        <p class="pool8transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
             
         </div>
         <!-- row closed -->
