@@ -1,0 +1,1830 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=1">
+
+    <script>
+        var account = localStorage.getItem("address");
+
+        if (account == null) {
+            alert("You are not Logged In. Please Login first..!!");
+            location.href = "../signin";
+        }
+    </script>
+
+   <link rel="shortcut icon" type="image/x-icon href="https://firebullv2.com/bullrun4.png">
+
+
+    <!-- Title -->
+    <title>firebullv2</title>
+
+ 
+
+   <!-- Bootstrap css -->
+    <link href="../bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Style css -->
+    <link href="https://bullrun.live/Content/assets/css/style.css" rel="stylesheet" />  
+   <!-- <link href="css/style.css" rel="stylesheet" /> -->
+
+    <!-- Default css -->
+    <link href="re/default.css" rel="stylesheet">
+
+    <!-- Sidemenu css-->
+    <link rel="stylesheet" href="../sidemenu.css">
+
+    <!-- Bootstrap-daterangepicker css -->
+    <link rel="stylesheet" href="re/daterangepicker.css">
+
+    <!-- Bootstrap-datepicker css -->
+    <link rel="stylesheet" href="re/bootstrap-datepicker.css">
+
+    <!-- Custom scroll bar css -->
+    <link href="re/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+    <!-- Sidemenu-repsonsive-tabs  css -->
+    <link href="re/sidemenu-responsive-tabs.css" rel="stylesheet">
+
+    <!-- P-scroll css -->
+    <link href="../p-scroll.css" rel="stylesheet" type="text/css">
+
+    <!-- Nice-select css  -->
+    <link href="../nice-select.css" rel="stylesheet" />
+
+    <!-- Select2 Plugin -->
+    <link href="../select2.min.css" rel="stylesheet" />
+
+    <!-- News-Ticker css-->
+    <link href="../jquery.jConveyorTicker.css" rel="stylesheet" />
+
+    <!-- Font icons css-->
+    <link href="re/icons.css" rel="stylesheet">
+
+    <!-- Rightsidebar css -->
+    <link href="re/sidebar.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Color-palette css-->
+    <link rel="stylesheet" href="../skins.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+ 
+
+
+
+    
+    <style>
+        .app-content {
+            margin-top: 100px;
+        }
+    </style>
+
+</head>
+<body class="app" style="background-color:#DBCDBA;">
+
+    <!-- Loader -->
+    <div id="loading">
+      <img src="plugins/loading.svg" class="loader-img" alt="Loader">  
+    </div>
+
+    <!-- PAGE -->
+    <div class="page">
+        <div class="page-main">
+
+            <!-- Top-header opened -->
+            <div class="header-main header sticky">
+                <div class="app-header header top-header navbar-collapse " style="background-color:#000000;">
+                    <div class="container-fluid" style="background-color:#000000;">
+                        <div class="d-flex">
+                            <a class="header-brand" href="https://firebullv2.com/Home-Dashboard">
+                        <!-- 	<h3   style="margin-top: 16px;color: #141670;">firebullv2</h3>141670 -->
+			      <!--- <h3  style="margin-top: 16px; color: #DB272B;">firebullv2</h3> -->
+				<div>
+				<img src="https://firebullv2.com/firebullv2header4.png">
+                                </div>
+                               
+                            </a>
+                            <a href="#" data-toggle="sidebar" class="nav-link icon toggle"><i class="fe fe-align-justify fs-20"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Top-header closed -->
+            <!-- Sidebar menu-->
+            <div class="app-sidebar__overlay" data-toggle="sidebar"</div>
+            <aside class="app-sidebar" style="background-color:#000000;">
+                <div class="side-tab-body p-0 border-0" id="sidemenu-Tab" style="background-color:#000000;">
+                    <div class="first-sidemenu" style="background-color:#000000;">
+                        <div class="line-animations">
+                            <ul class="resp-tabs-list hor_1">
+							    <li> </li><li></li><li></li><li></li><li></li><li></li><li></li>
+                                 <li class="resp-tab-active active"><a href="https://firebullv2.com/Home-Dashboard"><span class="side-menu__icon"></span><img src="../homepage.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Home"></a></li>
+                                <li class="autopool"><a href="https://firebullv2.com/Autopool"><span class="side-menu__icon"></span><img src="../m2.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Autopool"></a></li>
+                                
+                                <li class="team2"><a href="https://firebullv2.com/Team"><span class="side-menu__icon"></span><img src="../m4.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Team"></a></li>
+                                
+                             
+                                <li class="logoutuser"><span class="side-menu__icon"></span><img src="../m6.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Log out"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Sidemenu closed -->
+            <!-- App-content opened -->
+            <!-- App-content closed -->
+        </div>
+
+<script> 
+myContractInstance.methods.users(account).call().then(function (result1) {
+        
+    $('.currentuseridlink').html("https://firebullv2.com/signup/?referralid=" + result1.id);
+
+    $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://firebullv2.com/signup/?referralid=" + result1.id);
+
+
+
+    $('.currentuseridlink').val("https://firebullv2.com/signup/?referralid=" + result1.id);
+
+    $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://firebullv2.com/signup/?referralid=" + result1.id);
+
+
+
+    $('.sharebutton').attr('data-url', "https://firebullv2.com/signup/?referralid=" + result1.id);
+    $('.currentuserid').html(result1.id);
+    $('.currentaddress').html(account);
+    $('.ethaddress').attr('href', 'https://etherscan.io/address/' + account);
+
+});
+var totalearned = 0;
+function getVariableData() {
+    // get variable values
+    myContractInstance.methods.pool1currUserID().call().then(function (result) {
+        $('.Pool1count').html(result);
+        $('.pool1_current_address').html("<a href=https://etherscan.io/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool2currUserID().call().then(function (result) {
+        
+            $('.Pool2count').html(result);
+        $('.pool2_current_address').html("<a href=https://etherscan.io/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool3currUserID().call().then(function (result) {
+       
+            $('.Pool3count').html(result);
+        $('.pool3_current_address').html("<a href=https://etherscan.io/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool4currUserID().call().then(function (result) {
+       
+            $('.Pool4count').html(result);
+        $('.pool4_current_address').html("<a href=https://etherscan.io/address/" + result + " target=_blank>" + result+ "</a>");
+    });
+
+
+
+    myContractInstance.methods.pool5currUserID().call().then(function (result) {
+       
+            $('.Pool5count').html(result);
+        $('.pool5_current_address').html("<a href=https://etherscan.io/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool6currUserID().call().then(function (result) {
+        
+            $('.Pool6count').html(result);
+        $('.pool6_current_address').html("<a href=https://etherscan.io/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool7currUserID().call().then(function (result) {
+      
+            $('.Pool7count').html(result);
+        $('.pool7_current_address').html("<a href=https://etherscan.io/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool8currUserID().call().then(function (result) {
+       
+            $('.Pool8count').html(result);
+        $('.pool8_current_address').html("<a href=https://etherscan.io/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool9currUserID().call().then(function (result) {
+       
+            $('.Pool9count').html(result);
+        $('.pool9_current_address').html("<a href=https://etherscan.io/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool10currUserID().call().then(function (result) {
+        
+            $('.Pool10count').html(result);     
+        $('.pool10_current_address').html("<a href=https://etherscan.io/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+
+
+    myContractInstance.methods.currUserID().call().then(function (result) {
+    
+       
+            $('.TotalUsers').html(result);
+
+    });
+
+    myContractInstance.methods.users(account).call().then(function (result1) {
+        
+            $('.currentuseridlink').html("https://firebullv2.com/signup/?referralid=" + result1.id);
+
+            $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://firebullv2.com/signup/?referralid=" + result1.id);
+
+
+
+            $('.currentuseridlink').val("https://firebullv2.com/signup/?referralid=" + result1.id);
+
+            $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://firebullv2.com/signup/?referralid=" + result1.id);
+
+
+
+            $('.sharebutton').attr('data-url', "https://firebullv2.com/signup/?referralid=" + result1.id);
+            $('.currentuserid').html(result1.id);
+            $('.currentaddress').html(account);
+            $('.ethaddress').attr('href', 'https://etherscan.io/address/' + account);
+        
+    });
+
+    
+
+
+    if (account !== 'undefined') {
+        getReferralCommission();
+        getPoolPaymentReceived();
+	getPoolReferrer();
+
+   
+    }
+    
+
+
+    
+
+    
+    
+    DirectreferralCount();
+    myContractInstance.methods.users(account).call().then(function (result1) {
+        
+        $('.currentuseridlink').html("https://firebullv2.com/signup/?referralid=" + result1.id);
+    
+        $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://firebullv2.com/signup/?referralid=" + result1.id);
+    
+    
+    
+        $('.currentuseridlink').val("https://firebullv2.com/signup/?referralid=" + result1.id);
+    
+        $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://firebullv2.com/signup/?referralid=" + result1.id);
+    
+    
+    
+        $('.sharebutton').attr('data-url', "https://firebullv2.com/signup/?referralid=" + result1.id);
+        $('.currentuserid').html(result1.id);
+        $('.currentaddress').html(account);
+        $('.ethaddress').attr('href', 'https://etherscan.io/address/' + account);
+    
+    });
+    
+}
+
+
+
+
+function getReferralCommission() {
+    
+
+    var level1 = parseFloat(0.0075); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.000005);
+
+    var referraltotal = parseFloat(0);
+
+    var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', { filter: { _user: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+        
+        if (!error) {
+            $.each(log, function (key, value) {
+                var level = value.returnValues._level;
+
+                if (level == 1) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
+
+                }
+                else if (level == 2) {
+
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
+                }
+                else if (level == 3) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.0025");
+
+                }
+                else {
+
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.00025");
+
+                }
+
+                $('.totalreferral').html(Math.round(1000000 * (referraltotal)) / 1000000);
+            });
+           
+        }
+    });
+
+}
+
+
+
+function getPoolReferrer() {
+    
+
+   <!-- var level1 = parseFloat(0.0075); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.000005); -->
+
+    var referralpooltotal = parseFloat(0);
+
+    var events = myContractInstance.getPastEvents('getMoneyBuyPool', { filter: { _user: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+        
+        if (!error) {
+            $.each(log, function (key, value) {
+                var level = value.returnValues._level;
+		var levelpool = value.returnValues._levelpool;
+
+                if (level == 1) {
+                    if (levelpool == 1){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.01");
+		    }
+                    if (levelpool == 2){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.02");
+		    }
+                    if (levelpool == 3){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.03");
+		    }
+                    if (levelpool == 4){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.05");
+		    }
+                    if (levelpool == 5){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.1");
+		    }
+                    if (levelpool == 6){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.2");
+		    }
+		    if (levelpool == 7){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.3");
+		    }
+	            if (levelpool == 8){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.5");
+		    }
+
+					
+
+                }
+                 if (level == 2) {
+			if (levelpool == 1){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.005");
+		    }
+                    if (levelpool == 2){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.01");
+		    }
+                    if (levelpool == 3){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.015");
+		    }
+                    if (levelpool == 4){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.025");
+		    }
+                    if (levelpool == 5){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.05");
+		    }
+                    if (levelpool == 6){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.1");
+		    }
+	            if (levelpool == 7){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.15");
+		    }
+	            if (levelpool == 8){
+			referralpooltotal = parseFloat(referralpooltotal) + parseFloat("0.25");
+		    }
+
+                    
+                
+		
+
+                $('.totalpoolreferral').html(Math.round(1000000 * (referralpooltotal)) / 1000000);
+            });
+           
+        }
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+function getPoolPaymentReceived() {
+    var pool1_price = 0.075;
+    var pool2_price = 0.15;
+    var pool3_price = 0.225;
+    var pool4_price = 0.375;
+    var pool5_price = 0.75;
+    var pool6_price = 1.5;
+    var pool7_price = 2.25;
+    var pool8_price = 3.75;
+    var pool9_price = 50;
+    var pool10_price = 100;
+
+    var referraltotal = parseFloat(0);
+
+    var events = myContractInstance.getPastEvents('getPoolPayment', {filter : { _receiver: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+
+        if (!error) {
+            $.each(log, function (key, value) {
+                var level = value.returnValues._level;
+
+                if (level == 1) {
+                    referraltotal = parseFloat(referraltotal) + pool1_price;
+                }
+                else if (level == 2) {
+                    referraltotal = parseFloat(referraltotal) + pool2_price;
+                }
+                else if (level == 3) {
+                    referraltotal = parseFloat(referraltotal) + pool3_price;
+                }
+                else if (level == 4) {
+                    referraltotal = parseFloat(referraltotal) + pool4_price;
+                }
+                else if (level == 5) {
+                    referraltotal = parseFloat(referraltotal) + pool5_price;
+                }
+                else if (level == 6) {
+                    referraltotal = parseFloat(referraltotal) + pool6_price;
+                }
+                else if (level == 7) {
+                    referraltotal = parseFloat(referraltotal) + pool7_price;
+                }
+                else if (level == 8) {
+                    referraltotal = parseFloat(referraltotal) + pool8_price;
+                }
+                else if (level == 9) {
+                    referraltotal = parseFloat(referraltotal) + pool9_price;
+                }
+                else if (level == 10) {
+                    referraltotal = parseFloat(referraltotal) + pool10_price;
+                }
+
+
+                $('.totalpoolpayment').html(Math.round(1000000 * (referraltotal)) / 1000000);
+            });
+        }
+    });
+    
+
+    
+}
+
+var templevel = 1, t = 1;
+var employees = {
+    accounting: []
+};
+var str = "";
+//'0x2b153587bB08994903B1E394E3B667B0915835b7'
+function Directreferral() {
+    
+    var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+
+        if (!error) {
+
+            $.each(log, function (key, value) {
+                if (t == 1) {
+                    t = 2;
+                    $('#accordion11').html("");
+                    $('#accordion11').append('<div class="panel-heading1 bg-primary ">' +
+                        '<h4 class= "panel-title1">' +
+                        '<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion11" href="#collapseFour11" aria-expanded="false"><i class="fe fe-arrow-right mr-2"></i>Level 1</a>' +
+                        '</h4 >' +
+                        '</div >' +
+                        '<div id="collapseFour11" class="panel-collapse collapse" role="tabpanel" aria-expanded="false">' +
+                        '<div class= "panel-body border" ></div></div></div>')
+                        ;
+
+                }
+                $('#collapseFour11 .panel-body').append('<p style=color:green>' + value.returnValues._user + '</p>');
+
+                employees.accounting.push({
+
+                    'address': value.returnValues._user,
+                    "level": 1
+
+                });
+
+                InDirectreferral(value.returnValues._user, 2)
+            });
+        }
+        else {
+
+            $('#accordion11').append('No data');
+                ;
+        }
+    });
+}
+
+
+function InDirectreferral(address, level) {
+    var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: address },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
+
+        if (!error) {
+            $.each(log, function (key, value) {
+                if (templevel != level) {
+                    str += '';
+                }
+                if (templevel != level) {
+                    templevel = level;
+                    $('#accordion11').append('<div class="panel-heading1 bg-primary ">' +
+                        '<h4 class= "panel-title1">' +
+                        '<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1' + level + '" href="#collapseFour1' + level + '" aria-expanded="false"><i class="fe fe-arrow-right mr-2"></i>Level ' + level + '</a>' +
+                        '</h4 >' +
+                        '</div >' +
+                        '<div id="collapseFour1' + level + '" class="panel-collapse collapse" role="tabpanel" aria-expanded="false">' +
+                        '<div class= "panel-body border" ></div></div></div>')
+                        ;
+                }
+                $('#collapseFour1' + level + ' .panel-body').append('<p style=color:green>' + value.returnValues._user + '</p>');
+
+                employees.accounting.push({
+
+                    'address': value.returnValues._user,
+                    "level": level
+
+                });
+                InDirectreferral(value.returnValues._user, level + 1);
+            });
+        }
+    });
+}
+
+function DirectreferralCount() {
+    
+    var i = 1;
+    $('.referralcount').html(0);
+    $('.indirect_referralcount').html(0);
+    var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+       
+        if (!error) {
+            $.each(log, function (key, value) {
+                $('.referralcount').html(i++);
+
+                InDirectreferralCount(value.returnValues._user, 1)
+            });
+        }
+        else {
+            $('.referralcount').html(0);
+            $('.indirect_referralcount').html(0);
+        }
+    });
+     
+}
+var count = 1;
+
+function InDirectreferralCount(address, level) {
+    
+    var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: address },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
+      
+        if (!error) {
+            $.each(log, function (key, value) {
+                $('.indirect_referralcount').html(count++);
+                InDirectreferralCount(value.returnValues._user, level + 1);
+            });
+        }
+        else {
+            $('.indirect_referralcount').html(0);
+        }
+    });
+
+}
+
+
+function Transaction_Register() {
+    
+    var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+        var level1 = parseFloat(0.01); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.00025);
+
+        if (!error) {
+            $.each(log, function (key, value) {
+                
+                $('.autopool_table').append('<tr><td><a href="https://etherscan.io/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._referral + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? level1 : value.returnValues._level == 2 ? level2 : value.returnValues._level == 3 ? level3 : level4) + ' ETH</td></tr>');
+            });
+        }
+    });
+}
+
+
+function Transaction_Pool() {
+    var events = myContractInstance.getPastEvents('getPoolPayment', {filter:{ _receiver: account },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
+        var pool1_price = 0.1;
+        var pool2_price = 0.2;
+        var pool3_price = 0.3;
+        var pool4_price = 0.5;
+        var pool5_price = 1;
+        var pool6_price = 2;
+        var pool7_price = 3;
+        var pool8_price = 5;
+        var pool9_price = 50;
+        var pool10_price = 100;
+
+        if (!error) {
+            $.each(log, function (key, value) {
+                $('.transaction_autopool').append('<tr><td><a href="https://etherscan.io/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._user + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? pool1_price : value.returnValues._level == 2 ? pool2_price : value.returnValues._level == 3 ? pool3_price : value.returnValues._level == 4 ? pool4_price : value.returnValues._level == 5 ? pool5_price : value.returnValues._level == 6 ? pool6_price : value.returnValues._level == 7 ? pool7_price : value.returnValues._level == 8 ? pool8_price : value.returnValues._level == 9 ? pool9_price : pool10_price) + ' ETH</td></tr>');
+            });
+        }
+    });
+}
+</script>
+       
+
+<script>
+var myContractInstance, myContractInstance1;
+var account = localStorage.getItem("address");
+
+var abi = [{"constant":false,"inputs":[],"name":"buyPool1","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool5users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool3userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool1userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool8userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool1users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool4","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool4userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool2activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool7","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool9userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool9users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool2","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool7currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool6users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool8","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"getEthBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool3users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"LEVEL_PRICE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"unlimited_level_price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool2userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool4users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool6userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"requests","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool2users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool7users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"_referrerID","type":"uint256"}],"name":"regUser","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"ownerWallet","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool7activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool8users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool6","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool2currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool3","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool3currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool5userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool7userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool10userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool3activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool6currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool10users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool5","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referrer","type":"address"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referral","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getMoneyForLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regPoolEntry","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referral","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_levelpool","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getMoneyBuyPool","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_receiver","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getPoolPayment","type":"event"}];
+var address = "0x2b153587bB08994903B1E394E3B667B0915835b7";
+var MyContract;
+window.addEventListener('load', function () {
+    if (typeof web3 !== 'undefined') {
+
+       
+        web3 = new Web3(web3.currentProvider);
+
+        MyContract = new web3.eth.Contract(abi, address);
+        // initiate contract for an address
+
+        myContractInstance = MyContract;
+        myContractInstance1 = MyContract;
+        //web3.eth.getAccounts().then(function (result) {
+        //    account = result[0];
+           
+        //});
+        
+        if (web3.currentProvider.isTrust) {
+
+            const infura = 'https://mainnet.infura.io/v3/a380edd901454cf6ba4b4cefe4c8f7be';
+            const web3 = new Web3(new Web3.providers.HttpProvider(infura));
+            MyContract = new web3.eth.Contract(abi, address);
+            myContractInstance = MyContract;
+          
+        }
+        checkbuyLevel();
+  getVariableData();
+
+           
+
+    } else {
+        //  const Web3 = require('web3');
+
+        const infura = 'https://mainnet.infura.io/v3/a380edd901454cf6ba4b4cefe4c8f7be';
+        const web3 = new Web3(new Web3.providers.HttpProvider(infura));
+        MyContract = new web3.eth.Contract(abi, address);
+        myContractInstance = MyContract;
+
+           getVariableData();
+
+            checkbuyLevel();
+        // document.getElementById('output').innerHtml = 'Please download and install Metamask: <a href="https://metamask.io/">https://metamask.io/</a>'
+    }
+
+
+})
+
+
+function checkbuyLevel() {
+
+    myContractInstance.methods.users(account).call().then(function (result) {
+       
+            if (result[0]) {
+                checkPool1();
+                checkPool2();
+                checkPool3();
+                checkPool4();
+                checkPool5();
+                checkPool6();
+                checkPool7();
+                checkPool8();
+                checkPool9();
+                checkPool10();
+            }
+       
+
+    });
+
+}
+
+function checkPool1() {
+
+    myContractInstance.methods.pool1users(account).call().then(function (result) {
+       
+            if (!result[0]) {
+                $('.pool1pay').show();
+                $('.pool1transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool1status').show();
+                $('.pool1status .card-status').addClass('bg-success');
+                $('.pool1status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool1transaction').html('Received No. of Payments ' + result[2]);
+
+
+            }
+            else if (result[2]< 3) {
+                $('.pool1status').show();
+                $('.pool1status .card-status').addClass('bg-warning');
+                $('.pool1status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool1transaction').html('Received No. of Payments ' + result[2]);
+                $('.currentautopoolno').html(1);
+            }
+
+
+       
+
+    });
+
+}
+
+function checkPool2() {
+    myContractInstance.methods.pool2users(account).call().then(function (result) {
+      
+            if (!result[0]) {
+                $('.pool2pay').show();
+                $('.pool2transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool2status').show();
+                $('.pool2status .card-status').addClass('bg-success');
+                $('.pool2status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool2transaction').html('Received No. of Payments ' + result[2]);
+
+
+            }
+            else if (result[2] < 3) {
+                $('.pool2status').show();
+                $('.pool2status .card-status').addClass('bg-warning');
+                $('.pool2status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool2transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(2);
+            }
+
+
+
+     
+    });
+
+}
+
+function checkPool3() {
+    myContractInstance.methods.pool3users(account).call().then(function (result) {
+       
+
+            if (!result[0]) {
+                $('.pool3pay').show();
+                $('.pool3transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool3status').show();
+                $('.pool3status .card-status').addClass('bg-success');
+                $('.pool3status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool3transaction').html('Received No. of Payments ' + result[2]);
+
+
+            }
+            else if (result[2] < 3) {
+                $('.pool3status').show();
+                $('.pool3status .card-status').addClass('bg-warning');
+                $('.pool3status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool3transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(3);
+            }
+
+
+
+        
+    });
+
+}
+
+
+function checkPool4() {
+    myContractInstance.methods.pool4users(account).call().then(function (result) {
+       
+            if (!result[0]) {
+                $('.pool4pay').show();
+                $('.pool4transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool4status').show();
+                $('.pool4status .card-status').addClass('bg-success');
+                $('.pool4status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool4transaction').html('Received No. of Payments ' + result[2]);
+
+
+            }
+            else if (result[2] < 3) {
+                $('.pool4status').show();
+                $('.pool4status .card-status').addClass('bg-warning');
+                $('.pool4status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool4transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(4);
+            }
+
+       
+
+    });
+
+}
+
+function checkPool5() {
+    myContractInstance.methods.pool5users(account).call().then(function (result) {
+       
+            if (!result[0]) {
+                $('.pool5pay').show();
+                $('.pool5transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool5status').show();
+                $('.pool5status .card-status').addClass('bg-success');
+                $('.pool5status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool5transaction').html('Received No. of Payments ' + result[2]);
+
+
+            }
+            else if (result[2] < 3) {
+                $('.pool5status').show();
+                $('.pool5status .card-status').addClass('bg-warning');
+                $('.pool5status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool5transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(5);
+            }
+
+
+       
+
+    });
+
+}
+
+function checkPool6() {
+    myContractInstance.methods.pool6users(account).call().then(function (result) {
+        
+            if (!result[0]) {
+                $('.pool6pay').show();
+                $('.pool6transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool6status').show();
+                $('.pool6status .card-status').addClass('bg-success');
+                $('.pool6status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool6transaction').html('Received No. of Payments ' + result[2]);
+
+
+            }
+            else if (result[2] < 3) {
+                $('.pool6status').show();
+                $('.pool6status .card-status').addClass('bg-warning');
+                $('.pool6status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool6transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(6);
+            }
+
+       
+    });
+
+}
+
+function checkPool7() {
+    myContractInstance.methods.pool7users(account).call().then(function ( result) {
+        
+            if (!result[0]) {
+                $('.pool7pay').show();
+                $('.pool7transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool7status').show();
+                $('.pool7status .card-status').addClass('bg-success');
+                $('.pool7status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool7transaction').html('Received No. of Payments ' + result[2]);
+
+
+            }
+            else if (result[2] < 3) {
+                $('.pool7status').show();
+                $('.pool7status .card-status').addClass('bg-warning');
+                $('.pool7status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool7transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(7);
+            }
+
+
+
+        
+
+    });
+
+}
+
+function checkPool8() {
+    myContractInstance.methods.pool8users(account).call().then(function ( result) {
+       
+            if (!result[0]) {
+                $('.pool8pay').show();
+                $('.pool8transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool8status').show();
+                $('.pool8status .card-status').addClass('bg-success');
+                $('.pool8status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool8transaction').html('Received No. of Payments ' + result[2]);
+
+
+            }
+            else if (result[2] < 3) {
+                $('.pool8status').show();
+                $('.pool8status .card-status').addClass('bg-warning');
+                $('.pool8status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool8transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(8);
+            }
+
+
+       
+
+    });
+
+}
+
+function checkPool9() {
+    myContractInstance.methods.pool9users(account).call().then(function ( result) {
+       
+            if (!result[0]) {
+                $('.pool9pay').show();
+                $('.pool9transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool9status').show();
+                $('.pool9status .card-status').addClass('bg-success');
+                $('.pool9status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool9transaction').html('Received No. of Payments ' + result[2]);
+
+
+            }
+            else if (result[2] < 3) {
+                $('.pool9status').show();
+                $('.pool9status .card-status').addClass('bg-warning');
+                $('.pool9status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool9transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(9);
+            }
+
+
+        
+
+    });
+
+}
+
+function checkPool10() {
+    myContractInstance.methods.pool10users(account).call().then(function (result) {
+       
+            if (!result[0]) {
+                $('.pool10pay').show();
+                $('.pool10transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool10status').show();
+                $('.pool10status .card-status').addClass('bg-success');
+                $('.pool10status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool10transaction').html('Received No. of Payments ' + result[2]);
+                $('.currentautopoolno').html(10);
+            }
+            else if (result[2] < 3) {
+                $('.pool10status').show();
+                $('.pool10status .card-status').addClass('bg-warning');
+                $('.pool10status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool10transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(10);
+            }
+
+
+       
+
+    });
+
+}
+$(document).ready(function () {
+    $('.pool1pay').click(function () {
+        try {
+
+            ethereum.enable();
+            myContractInstance1.methods.buyPool1().send({ from: account, value: 100000000000000000, gas: 500000 })
+                .on('transactionHash', function (hash) {
+                
+                    $('.pool1pay').hide();
+                    $('.pool1transaction').show();
+                    $('.pool1transaction').html('<a href="https://etherscan.io/tx/' + hash + '">Track</a>');
+              
+            });
+        }
+        catch (err) {
+            console.log(err)
+        }
+    });
+
+
+    $('.pool2pay').click(function () {
+        try {
+            ethereum.enable();
+          
+
+            myContractInstance1.methods.buyPool2().send({ from: account, value: 200000000000000000, gas: 500000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool2pay').hide();
+                    $('.pool2transaction').show();
+                    $('.pool2transaction').html('<a href="https://etherscan.io/tx/' + hash + '">Track</a>');
+
+                });
+        }
+        catch (err) {
+            console.log(err)
+        }
+    });
+
+    $('.pool3pay').click(function () {
+        try {
+            ethereum.enable();
+
+            myContractInstance1.methods.buyPool3().send({ from: account, value: 300000000000000000, gas: 500000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool3pay').hide();
+                    $('.pool3transaction').show();
+                    $('.pool3transaction').html('<a href="https://etherscan.io/tx/' + hash + '">Track</a>');
+
+                });
+        }
+        catch (err) {
+            alert('Please download and install Metamask and Loggin to account');
+        }
+    });
+
+    $('.pool4pay').click(function () {
+        try {
+            ethereum.enable();
+            
+            myContractInstance1.methods.buyPool4().send({ from: account, value: 500000000000000000, gas: 500000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool4pay').hide();
+                    $('.pool4transaction').show();
+                    $('.pool4transaction').html('<a href="https://etherscan.io/tx/' + hash + '">Track</a>');
+
+                });
+        }
+        catch (err) {
+            alert('Please download and install Metamask and Loggin to account');
+        }
+    });
+
+    $('.pool5pay').click(function () {
+        try {
+            ethereum.enable();           
+
+            myContractInstance1.methods.buyPool5().send({ from: account, value: 1000000000000000000, gas: 500000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool5pay').hide();
+                    $('.pool5transaction').show();
+                    $('.pool5transaction').html('<a href="https://etherscan.io/tx/' + hash + '">Track</a>');
+
+                });
+        }
+        catch (err) {
+            alert('Please download and install Metamask and Loggin to account');
+        }
+    });
+
+
+    $('.pool6pay').click(function () {
+        try {
+            ethereum.enable();
+
+            myContractInstance1.methods.buyPool6().send({ from: account, value: 2000000000000000000, gas: 500000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool6pay').hide();
+                    $('.pool6transaction').show();
+                    $('.pool6transaction').html('<a href="https://etherscan.io/tx/' + hash + '">Track</a>');
+
+                });
+        }
+        catch (err) {
+            alert('Please download and install Metamask and Loggin to account');
+        }
+    });
+
+
+    $('.pool7pay').click(function () {
+        try {
+            ethereum.enable();
+
+            myContractInstance1.methods.buyPool7().send({ from: account, value: 3000000000000000000, gas: 500000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool7pay').hide();
+                    $('.pool7transaction').show();
+                    $('.pool7transaction').html('<a href="https://etherscan.io/tx/' + hash + '">Track</a>');
+
+                });
+
+
+        }
+        catch (err) {
+            alert('Please download and install Metamask and Loggin to account');
+        }
+    });
+
+
+    $('.pool8pay').click(function () {
+        try {
+            ethereum.enable();
+
+            myContractInstance1.methods.buyPool8().send({ from: account, value: 5000000000000000000, gas: 500000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool8pay').hide();
+                    $('.pool8transaction').show();
+                    $('.pool8transaction').html('<a href="https://etherscan.io/tx/' + hash + '">Track</a>');
+
+                });
+
+        }
+        catch (err) {
+            alert('Please download and install Metamask and Loggin to account');
+        }
+    });
+
+
+    $('.pool9pay').click(function () {
+        try {
+            ethereum.enable();
+            
+            myContractInstance1.methods.buyPool9().send({ from: account, value: 50000000000000000000, gas: 500000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool9pay').hide();
+                    $('.pool9transaction').show();
+                    $('.pool9transaction').html('<a href="https://etherscan.io/tx/' + hash + '">Track</a>');
+
+                });
+        }
+        catch (err) {
+            alert('Please download and install Metamask and Loggin to account');
+        }
+    });
+
+
+    $('.pool10pay').click(function () {
+        try {
+            ethereum.enable();
+           
+            myContractInstance1.methods.buyPool10().send({ from: account, value: 100000000000000000000, gas: 500000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool10pay').hide();
+                    $('.pool10transaction').show();
+                    $('.pool10transaction').html('<a href="https://etherscan.io/tx/' + hash + '">Track</a>');
+
+                });
+        }
+        catch (err) {
+            alert('Please download and install Metamask and Loggin to account');
+        }
+    });
+
+
+});
+</script>
+
+
+
+
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+        
+        
+  <script src="https://bullrun.live/content/assets/js/socialjs.js"></script>
+       
+        
+        
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        socialjs.init({
+            container: '.socialjs',
+            https: true
+        });
+    });
+</script>
+
+<script>
+    function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+      
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+    }
+
+</script>
+
+<script>
+
+    function myFunction1() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput1");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
+
+
+
+<div class="app-content">
+    <div class="section">
+
+        <!-- Banner opened -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="banner banner-color mt-0">
+                    <div class="col-xl-2 col-lg-3 col-md-12">
+                        <img src="../foto2.png" alt="image" class="image">
+                    </div>
+                    <div class="page-content col-xl-7 col-lg-6 col-md-12">
+                        <h3 class="mb-1">User ID : <span class="currentuserid"></span></h3> 
+
+                        <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
+                        <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
+
+
+                        <p class="mb-0 fs-16">Referral link : <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
+
+                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
+
+
+                        <p class="mb-0 fs-16"><a class="ethaddress" href="" target="_blank">Your ETH address: <span class="currentaddress"></span> <i class="fa fa fa-external-link"></i></a></p>
+                    </div>
+                    
+                    </div>
+            </div>
+        </div>
+        <!-- Banner opened -->
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-xl-12 col-md-12 col-lg-12">
+                <div class="card bg-dark1">
+                    <div class="js-conveyor-example">
+                        <ul class="news-crypto">
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/total.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Total Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="TotalUsers"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/1.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 1 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool1count"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/2.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 2 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool2count"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/3.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 3 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool3count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/4.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 4 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool4count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/5.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 5 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool5count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/6.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 6 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool6count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+			    <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/7.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 7 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool7count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+			    <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="https://firebullv2.com/8.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 8 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool8count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>	
+                            
+                            
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden bg-primary">
+                    <div class="card-body bg-gradient-success">
+                        <div class="d-flex">
+                            <div class="">
+                                <p class="mb-2 h6">Referral SignUP Earning ETH</p>
+                                <h2 class="mb-1 "><span class="totalreferral">0</span></h2>
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                    <img src="../d1.png" class="h-7" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden bg-gradient-secondary">
+                    <div class="card-body text-white">
+
+                        <div class="d-flex">
+                            <div class="">
+                              <p class="mb-2 h6">Autopool Referral Earning</p>
+                                <h2 class="mb-1 "><span class="totalpoolreferral">0</span></h2>
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                    <img src="../d2.png" class="h-7" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden bg-teal">
+                    <div class="card-body text-white">
+                        <div class="d-flex">
+                            <div class="">
+                                <p class="mb-2 h6">AutoPool Earning ETH</p>
+                                <h2 class="mb-1 "><span class="totalpoolpayment">0</span></h2>
+
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                    <img src="../d4.png" class="h-7" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden" style="background-color:#004172;color:#fff;">
+
+                    <div class="card-body text-white">
+                        <div class="d-flex">
+                            <div class="">
+                                
+				<p class="mb-2 h6">Direct Team</p>
+                                <h2 class="mb-1 "><span class="referralcount">0</span></h2>
+                            </div>
+
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                    <img src="../d5.png" class="h-7" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <!-- row closed -->
+        
+        <!-- row opened -->
+        <div class="row ">
+            <div class="col-md-3 col-xs-6">
+                <div class="card text-center overflow-hidden"style="background-color:#FFEEA8;" >
+                    <div class="pool1status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h2 class="card-title font-weight-bold">AutoPool 1</h2>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">0.1 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays <br /> <strong>0.075</strong> ETH each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <button type="button" class="btn btn-primary pool1pay">Enter</button>
+                        <p class="pool1transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden" style="background-color:#FFEEA8;">
+                    <div class="pool2status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 2</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">0.2 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.15</strong> ETH each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <button type="button" class="btn btn-danger pool2pay">Enter</button>
+                        <p class="pool2transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden" style="background-color:#FFEEA8;">
+                    <div class="pool3status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 3</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">0.3 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.225</strong> ETH each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <button type="button" class="btn btn-success pool3pay">Enter</button>
+                        <p class="pool3transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden" style="background-color:#FFEEA8;">
+                    <div class="pool4status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left "><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 4</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">0.5 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.375</strong> ETH each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <button type="button" class="btn btn-success pool4pay">Enter</button>
+                        <p class="pool4transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden" style="background-color:#FFEEA8;">
+                    <div class="pool5status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left "><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 5</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">1 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.75</strong> ETH each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <button type="button" class="btn btn-success pool5pay">Enter</button>
+                        <p class="pool5transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden" style="background-color:#FFEEA8;">
+                    <div class="pool6status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 6</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">2 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>1.5</strong> ETH each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <button type="button" class="btn btn-success pool6pay">Enter</button>
+                        <p class="pool6transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+	    <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden" style="background-color:#FFEEA8;">
+                    <div class="pool7status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 7</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">3 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>2.25</strong> ETH each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <button type="button" class="btn btn-success pool7pay">Enter</button>
+                        <p class="pool7transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+	    <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden" style="background-color:#FFEEA8;">
+                    <div class="pool8status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 8</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">5 ETH</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>3.75</strong> ETH each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <button type="button" class="btn btn-success pool8pay">Enter</button>
+                        <p class="pool8transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- row closed -->
+
+    </div>
+</div>
+
+
+<style>
+    .pool1pay, .pool2pay, .pool3pay, .pool4pay, .pool5pay, .pool6pay, .pool7pay, .pool8pay, .pool9pay, .pool10pay {
+        display: none
+    }
+
+    .pool1status, .pool2status, .pool3status, .pool4status, .pool5status, .pool6status, .pool7status, .pool8status, .pool9status, .pool10status {
+        display: none
+    }
+</style>
+
+
+
+        <!-- Footer opened -->
+        <footer class="footer-main leftmenu-footer" style="background-color:#DBCDBA;">
+            <div class="container" style="background-color:#DBCDBA;">
+                <div class="row">
+                    <div class="col-md-6  mt-2 mb-2 p-l-10">
+                        <span class="p-r-10">Contract address</span>
+                        <a href="https://etherscan.io/address/0x2b153587bB08994903B1E394E3B667B0915835b7" class="text-success" target="_blank">
+                            0x2b153587bB08994903B1E394E3B667B0915835b7 <i class="fa fa-external-link"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-6  mt-2 mb-2 text-center">
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer closed -->
+    </div>
+
+    <!-- Back-to-top -->
+   
+    <!-- Jquery-scripts -->
+    <script src="re2/jquery-3.2.1.min.js"></script>
+
+    <!-- Moment js-->
+    <script src="re2/moment.min.js"></script>
+
+    <!-- Bootstrap-scripts js -->
+    <script src="re2/bootstrap.bundle.min.js"></script>
+
+    <!-- Sparkline JS-->
+    <script src="re2/jquery.sparkline.min.js"></script>
+
+    <!-- Bootstrap-daterangepicker js -->
+    <script src="re2/daterangepicker.js"></script>
+
+    <!-- Bootstrap-datepicker js -->
+    <script src="re2/bootstrap-datepicker.js"></script>
+
+    <!-- Chart-circle js -->
+    <script src="re2/circle-progress.min.js"></script>
+
+    <!-- Rating-star js -->
+    <script src="re2/jquery.rating-stars.js"></script>
+
+    <!-- Custom scroll bar js-->
+    <script src="re2/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- P-scroll js -->
+    <script src="re2/p-scroll.js"></script>
+    <script src="re2/p-scroll-leftmenu.js"></script>
+
+    <!-- Sidemenu js-->
+    <script src="re2/sidemenu.js"></script>
+
+    <!-- Sidemenu-respoansive-tabs js -->
+    <script src="re2/sidemenu-responsive-tabs.js"></script>
+
+    <!-- Leftmenu js -->
+    <script src="re2/left-menu.js"></script>
+
+    <!--Newsticker js-->
+    <script src="re2/jquery.jConveyorTicker.js"></script>
+    <script src="re2/newsticker.js"></script>
+
+    <!-- Chart js-->
+    <script src="re2/chart.min.js"></script>
+
+    <!-- Nice-select js-->
+    <script src="re2/jquery.nice-select.js"></script>
+    <script src="re2/nice-select.js"></script>
+
+    <!-- Apexchart js-->
+    <script src="re2/apexcharts.js"></script>
+
+    <!-- Rightsidebar js -->
+    <script src="re2/sidebar.js"></script>
+
+    <!-- Index js-->
+    <script src="re2/index2.js"></script>
+
+    <!-- Custom js-->
+    <script src="re2/custom.js"></script>
+    <!--LOgout Js-->
+    
+    <script> 
+     $(document).ready(function() {
+        $('.logoutuser').click(function () {
+        
+            var account = localStorage.removeItem("address", null);
+            location.href = "../signin";
+        });
+    });
+    </script>
+  
+  
+   <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://bullrun.live/socialjs.js/"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            socialjs.init({
+                container: '.socialjs',
+                https: true
+            });
+        });
+        
+      </script>
+  
+</body>
+</html>
